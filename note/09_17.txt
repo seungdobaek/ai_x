@@ -1,0 +1,14 @@
+5절 연산자
+	비트연산자 : &, |, ^, ~
+6절 문자열다루기
+	인덱싱&슬라이싱
+	len(문자변수)
+	dir(str): 문자 함수 리스트 출력
+	strip(), split(), replace(), find()
+	upper(), lower(), startswith(), endswith(), join(), ...
+7절 시간날짜, 시간, 날짜 다루기
+	datetime(년, 월, 일, 시, 분, 초)
+	datetime.now() : 현재시점
+	date(년, 월, 일)
+	time(시, 분)
+	
