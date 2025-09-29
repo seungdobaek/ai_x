@@ -3,3 +3,4 @@ IDE/
 lecNote/
 올리면안되는파일.txt
 **/__pycache__/
+**/.ipynb_checkpoints/
