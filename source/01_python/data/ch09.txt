@@ -1,10 +1,6 @@
-Python is easy.
-Python is smart.
-Python is easy.
-Python is smart.
-����Ʈ �Լ��� ���� ���Ⱑ �����մϴ�-������� :
-Python is easy.
-Python is smart.
-����Ʈ �Լ��� ���� ���Ⱑ �����մϴ�-������� :
-Python is easy.
-Python is smart.
+홍길동, 30, 서울
+김길동, 20, 수원
+홍길동, 30, 서울
+김길동, 20, 부산
+홍길동, 30, 서울
+김길동, 20, 부산
