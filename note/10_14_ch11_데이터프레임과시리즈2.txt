@@ -1,0 +1,42 @@
+11장 데이터프레임과 시리즈
+ 3절 이름(열/행) 지정하기
+  3.1 열이름 지정하기
+	df.colulmns = column_list (column_list는 열의 수와 동일한 사이즈의 리스트)
+  3.2 행이름 지정하기
+	df.index = index_list (index_list는 행의 수와 동일한 사이즈의 리스트)
+	df.set_index = index_list (행 이름을 열 중 하나로 지정하고 싶을경우)
+	dif.reset_index() (행의 이름을 기본값으로 변경하고 기존의 이름을 열에 추가)
+  3.3 레벨 이름 지정하기
+	행과 열 이름을 다차원 리스트로 하면 레벨이 지정
+ 4절 부분 데이터 조회
+	df[열이름] : 특정열 조회
+	df[조건] : 조건에 맞는 모든 행 조회
+	df.loc[행이름, 열이름]
+		행이름, 열이름 자리에 슬라이싱, 리스트 가능
+		열이름 생략하면 모든 열 출력
+		행이름 자리에 조건 가능
+	df.iloc[행순번, 열순번]
+		행순번, 열순번 자리에 슬라이싱, 리스트 가능
+		열이름 생략시 모든 열
+ 5절 데이터 삭제 및 추가
+  5.1 데이터프레임의 요소 삭제
+	df.drop(삭제할 열, axis=axis)
+		사제할 열은 하나면 열이름 다중이면 리스트
+		axis = 0이면 행 삭제 1이면 열 삭제
+  5.2 데이터프레임의 요소 추가
+	df[새로운_열이름] = 값 또는 리스트
+	열을 추가할때는 새로운 데이터로 변환 후 pd.concat을 사용
+ 6절 병합과 연결
+  6.1 merge() 를 이용한 데이터병합
+	df1.merge(df2, how=방법, right_on=오른쪽키, left_on=왼쪽키)
+		방법은 'inner'(기본값), 'left', 'right', 'outer'
+  6.2 concat()을 이용한 데이터프레임 연결
+	pd.concat([df1, df2, df3, ...], axis)
+		axis= 0(기본값)이면 위아래, 1이면 좌우
+ 7절 정렬
+  7.1 행이름으로 정렬
+	df.sort_index(axis=0, ascending)
+  7.2 열이름으로 정렬
+	df.sort_index(axis=1, ascending)
+  7.3 값에 의한 정렬
+	df.sort_values(by=기준이될열, ascending)
