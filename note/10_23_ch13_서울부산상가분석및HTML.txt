@@ -1,0 +1,33 @@
+ch13 예2 서울부산 상가분석
+ 13. 구별로 학원수 비교 : 서울 대치동이나 목동에 사교육이 발달되었다는 가설을 뒷받침할 수 있는 분석
+ 14. 서울시 데이터만 경도와 위도를 산점도로 시각화
+ 15. 지도시각화
+	Folium package
+파이썬 마무리
+유닛 2 HTML&CSS
+1장 개론
+ 1.1 HTML을 하기위한 개발환경 설정
+ 1.2 Web과 HTML
+	웹의 주소 형태: https://www.naver.com:80/abc/def/index.jsp
+		https://  : 프로토콜
+		www.naver.com : 주소
+		80 : 포트번호(80이 기본)
+		abc/def/index.jsp : 디렉토리 및 파일 주소
+ 1.3 HTML, CSS, JavaScript
+	HTML (Hyper Text Markup Language) 
+		웹문서의 내용
+		태그들로 이루어짐
+	CSS (Cascading Style Sheet) 
+		웹문서의 디자인
+	JavaScript
+		웹문서의 동적인 내용
+ 1.4 HTML 기본 예제 만들어보기
+  HTML의 태그들 :
+	<!DOCTYPE html> : html5 파일이라는 것을 명시
+	<html></html> : html의 내용이라는 것을 표시하는
+	<head></head> : head부분 웹문서의 설정 정보
+		<style></style> : 디자인 영역(CSS)
+			코드를 적어도 되지만 CSS파일과 링크도 가능
+		<script></script> : 동적인 부분 (JavaScript)
+			코드를 적어도 되지만 js파일과 링크도 가능
+	<body></body> : 웹문서의 출력될 정보
