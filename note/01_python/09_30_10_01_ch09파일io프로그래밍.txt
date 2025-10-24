@@ -1,0 +1,42 @@
+9장 파일 i/o 프로그래밍
+	with절을 이용하여 파일 스트림을 생성
+	문법: with open(데이터파일명, 'r'/w/'a'', encoding='인코딩방법') as 파일스트림객체
+		인코딩 방법(한글의 경우) : cp949(한글완성형확장형), utf-8(한글조합형)
+ 1절 txt파일
+  1.1절 데이터 저장
+	파일스트림.write(저장할 텍스트)
+	파일스트림.writelines(저장할 리스트)
+  1.2절 데이터 읽기
+	파일스트림.read() : 파일 전체 읽기
+	파일스트림.readline() : 한 라인씩 읽기
+	파일스트림.readlines() : 모든 라인을 리스트로 변환
+ 2절 피클파일 (pickle 패키지 사용) / 'wb' 또는 'rb'로 open
+  2.1절 데이터저장 : pickle.dump(객체리스트, 파일스트림)
+  2.2절 데이터읽기 : pickle.load(파일스트림)
+ 3절 csv 파일 (csv 패키지 사용)
+  3.1절 reader : csv.reader(파일스트림) : csv 전용 읽기 객체
+  3.2절 writer : csv.writer(파일스트림) : csv 전용 쓰기 객체
+  3.3절 DictReader : csv.DictReader(파일스트림) : csv를 딕셔너리 데이터로 읽기
+  3.4절 DictWriter : csv.DictWriter(파일스트림) : csv를 딕셔너리 데이터로 쓰기
+ 4절 json 파일 (json 패키지 사용)
+  4.1절 데이터 저장
+   4.1.1절 딕셔너리 list를 json으로 저장
+	json.dump(데이터, 
+		파일스트림, 
+		ensure_ascii='True'/'False' #ASCII를 벗어난 코드의 처리방법
+		indent='인덴트방식')
+   4.1.2절 객체 list를 json파일로 저장
+	json.dump(데이터, 
+		파일스트림, 
+		ensure_ascii='True'/'False' #ASCII를 벗어난 코드의 처리방법
+		indent='인덴트방식',
+		default='객체를 리스트로 변경하는 함수')
+  4.2절 데이터 읽기
+   4.2.1절  json파일을 딕셔너리 리스트로 읽기
+	json.load(파일스트림)
+   4.2.2절 json 파일을 객체 리스트로 읽기
+	json.load(파일스트림
+		object_hook='딕셔너리 리스트를 객체로 변경하는 함수')
+ 5절 hdf5 파일 쓰기/읽기
+	딕셔너리 리스트, 데이터 프레임, 딥러닝 모델
+	확장자 : *.hdf5, *.h5

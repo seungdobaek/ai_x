@@ -1,0 +1,20 @@
+5장 함수
+ 4절 람다식
+	lambda [매개변수] : [리턴값]
+	lambda [매개변수] : [리턴값(True일시)] if [조건문] else [리턴값(False일시)
+	용도 : (1) 함수의 매개변수 (2) 함수를 리턴할때
+  4.1 람다식 연습
+  4.2 함수의 매개변수(인수)에 람다식 사용
+	함수의 매개변수 또는 리턴문에 람다식 사용 가능
+   4.2.1 ★map : vector의 값들을 func 함수를 적용
+	map(func, vector)
+   4.2.2 filter : vector에서 func를 만족하는 인덱스만 추출
+	filter(func, vector)
+   4.2.3 sort : vector를 정렬
+	vector.sort(key='None', reverse='False')
+		key가 없을경우 0번째 인덱스를 기준으로 정렬
+			dictionary의 경우 0번째 인덱스가 없기에 key가 없으면 오류
+		key가 있으면 key를 기준으로 정렬
+ 5절 파이썬 내장함수
+	import  하지 않고 바로 사용 가능한 함수
+	키워드처럼 간주되므로, 식별자로 사용하는 것은 비추천

@@ -1,0 +1,33 @@
+ch2 HTML-1
+1절 태그 : HTML을 구성하고 있는 요소
+	태그이름, 태그속성, 태그값으로 이루어짐
+	잘못된 태그의 경우 무시
+2절 문자관련태그
+	h1~h6 : 제목 (숫자가 클수록 소제목)
+	p : 본문
+	a : 앵커
+	b : bold, I : italic, ins : 아래줄
+	sub/sup : 아래첨자 / 윗첨자
+3절 목록태그
+	ul : unordered list 순서가 없는 목록
+		type=disc(기본값), circle, spuare
+	ol : ordered list 순서가 있는 목록
+		type=1(기본값), i, I, a, A
+4절 표태그
+	table : 테이블을 나타내는 태그
+	tr : 표 내부의 행 태그
+	td : 표 내부의 열 태그 (일반) / th : 표 내무의 열 태그 (제목)
+5절 이미지태그
+	img : 이미지 태그
+		src : 이미지 경로
+		alt : 대체 메세지
+		width/height : 크기
+6절 오디오/비디오 태그
+	audio : 오디오 태그
+	video : 비디오 태그
+		src : 오디오/비디오 경로
+		controls : 비디오재생 도구
+		loop : 반복 재생 여부
+		width/height : 크기
+		preload : 모두 불러오기 여부
+		poster : 썸네일 (비디오만 가능)

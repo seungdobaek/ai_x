@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>로그인</title>
+    <style>
+        table{
+            /* 테이블을 브라우저 가운데 배치 */
+            width: 290px;
+            margin: 0px auto;
+        }
+        td, th{padding: 5px 10px; /*안여백 : 위, 오른쪽, 아래, 왼쪽*/}
+    </style>
+</head>
+<body>
+    닉 네 임 <input type="text" name="nickname" value="form밖의 input은 전달X, 파라미터 name이 필수 속성"/>
+    <form action="http://www.daum.net" method="get">
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="id" /></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pw" /></td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" , value="로그인"></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
