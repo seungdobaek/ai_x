@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style> /* 위부터 아래로 차례차례 적용 */
+        *{ /* 전체 선택자 : 페이지 초기화 용도, 전체 페이지의 디자인을 초기화 */
+           margin: 0px;
+           padding: 0px;
+           color: saddlebrown;
+        }
+        header, nav, section, footer{
+            border: 1px solid gray;
+            width: 500px;
+            margin: 2px auto; /* 좌우 여백을 나눔*/
+        }
+        /* ul li 메뉴를 수평으로 */
+        nav ul{
+            overflow: hidden; /* 수평으로 하고픈 태그의 부모단 */
+        }
+        nav ul li {
+            float: left;
+            list-style: none;
+            width: 25%;
+            text-align: center;
+        }
+        section{
+            clear: both; /* float속성을 clear, overflow hidden을 했으면 생략 가능 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>00 주식회사</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>회사소개</li><li>서비스소개</li><li>고객센터</li><li>공지사항</li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            CSS 선택자란, 웹페이지의 특정 부분을 선택하여 태그의 속성을 변경하는 목정으로 이용
+        </p>
+        <p>
+            행동이 출품한 것 그렇다 못하냐. 관계보다 제조업의 다시 과학과 잃다. 자녀에 수행에 타국만리는 피해의 부각되다. 빗물에서 불안감을 것 그동안이 대하다. 것 호위대로 없은 9명, 출어를 걸다 좀먹는다. 78개 것 위원장을 뒤를 설치되는 가능하면 년도, 2명 숨지다.
+        </p>
+    </section>
+    <footer>
+        <p>서울시 XX구 OO동 ㅁㅁ빌딩 △F</p>
+    </footer>
+</body>
+</html>

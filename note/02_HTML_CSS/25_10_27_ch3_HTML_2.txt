@@ -1,0 +1,18 @@
+ch3 HTML-3
+ 1절 form 태그 : 사용자에게 입력 받는 공간 태그
+	action: 전달 위치
+	method: 전달 방식 (GET or POST)
+  1.1 input 태그 : 사용자가 입력 태그
+	type : 태그 타입
+		text, file, password, tel, ....
+	pattern : 태그값의 패턴
+	placeholder : 입력 형식 힌트
+	min, max, autofocus 속성들도 가능
+ 2절 공간분할 태그
+  2.1 div (블록형식의 태그)
+  2.2 span (inline 형식의 태그)
+ 3절 시멘틱을 이용한 태그
+	header, footer, section, nav 등의 태그를 이용
+	사용 이유 :
+		각 분야를 쉽게 구분할수 있다
+		검색 엔진에게 어떤 부분을 추출을 해야하는지 알려주는 역활
