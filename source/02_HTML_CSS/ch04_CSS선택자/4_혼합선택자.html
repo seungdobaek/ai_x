@@ -9,29 +9,29 @@
             border: 1px solid gray;
             text-align: center; /* 글씨와 img 가운데 정렬 */
         }
-        #header{ /* id 선택자(#) */
+        div#header{ /* id 선택자(#) */
             width: 600px;
             background-color: yellow;
             margin: 0 auto;
         }
-        #wrap {
+        div#wrap {
             width: 600px;
             margin: 0 auto;
             background-color: aqua;
             overflow: hidden;
         }
-        #wrap #content{
+        #wrap div#content{
             float: left;
             width: 350px;
         }
-        #wrap #side_banner{
+        #wrap div#side_banner{
             float: right;
             width: 246px; /* 전체 wrap의 width=600, content의 width가 350이지만 border가 1px씩 차지하고 있기에 250px이 아니라 246px이 올바른 값 */
         }
-        #wrap #content .odd{ /* class 선택자(.) */
+        #wrap #content li.odd{ /* class 선택자(.) */
             font-size: 1.5em; /* 원래크기의 1.5배 */
         }
-        #wrap #content .menu2{
+        #wrap #content li.menu2{
             font-weight: bold;
         }
         #wrap img{

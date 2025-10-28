@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div#wrap{
+            width: 600px;
+            margin: 0 auto;
+        }
+        /*  .logo와 .title 수평으로 */
+        #wrap > #header { /* 자손선택자*/
+            overflow: hidden;
+        }
+
+        #wrap .logo {
+            float: left;
+            padding: 10px 30px 10px 150px
+        }
+
+        #wrap .title {
+            float: left;
+            padding: 20px 150px 10px 30px
+        }
+        div p{ /* 후손 선택자 div 밑의 p (자손, 후손 포함) */
+            font-size: 25px
+        }
+        div > p {/* 자손선택자 div 바로밑의 p(자손만*/
+            color: red;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <div class="title">
+                <h2>OO 주식회사</h2>
+            </div>
+        </div>
+        <div id="content">
+            <p>
+                잔언안아야 냄므지외로 컨선자자딘의 봘신디, 우다망단에 꿀시는. 살녀와셴던 데안 이가자 허닝진 바멈을 령응. 이타단스허를 노믜하안브 않치 솨슴디븐으로 오진쁘구므레는. 공호자에 오노미스, 그안묏에서 현네들, 키에어러 싸해버길 흐럼까지 쪼무칠상이 비사와 으겨럭어를. 나섬한디가 반둔됴와, 손간의 고멸, 나춤시는 진욘가니냐싹은. 징머셩다 서수갸횹을, 머싸아 지긜 아훵이 디히즈닌다 조곙 간꺼에 알드므굴이 하흐마옉앵은 앗맨듀잩.
+            </p>
+            <ul>
+                <li>
+                    <p>잔언안아야 냄므지외로 컨선자자딘의 봘신디, 우다망단에 꿀시는.</p>
+                </li>
+                <li>
+                    <p>이타단스허를 노믜하안브 않치 솨슴디븐으로 오진쁘구므레는. 공호자에 오노미스</p>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <p>서울시 관악구 신림동</p>
+        </div>
+    </div>
+</body>
+</html>

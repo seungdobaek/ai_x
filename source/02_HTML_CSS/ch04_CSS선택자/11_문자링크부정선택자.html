@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width: 800px;
+            margin: 0 auto;
+        }
+        #header{
+            text-align: center;
+        }
+        #content{
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+            text-align: justify;
+        }
+        #content p:nth-child(2)::first-line, #content p:nth-child(3)::first-line {
+            color: blue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #content p:nth-child(2)::first-letter, #content p:nth-child(3)::first-letter{
+            font-size: 2em;
+        }
+        #content p:nth-child(2)::selection{
+            background-color: violet;
+            color: yellow;
+        }
+        #content ul li{
+            margin: 10px 0;
+        }
+        #content a{
+            color: blue;
+            text-decoration: none;
+            display: block /* 블록형 태그로 전환*/;
+        }
+        #content a:after{ /*링크 선택자*/
+            content: ' - ' attr(href)
+        }
+        #content li:not(.web) a{ /*부정선택자: li중에 .web을 제외하고*/
+            background-color: yellow;
+        }
+        #content li.web{
+
+        }
+        #footer ul{
+            overflow: hidden;
+        }
+        #footer ul li{
+            list-style: none;
+            float: left;
+        }
+        img[src$='logo.png']{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>
+                오전에 서쪽 오후에는 강우너 경상내륙 많은 눈 예상
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br /> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br /> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <ul>
+                <li><a href="https://www.naver.com">네이버</a></li>
+                <li class="web"><a href="https://www.daum.net">다음</a></li>
+                <li><a href="https://www.google.com">구글</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" /></li>
+                <li><img src="ch04/address.png" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
