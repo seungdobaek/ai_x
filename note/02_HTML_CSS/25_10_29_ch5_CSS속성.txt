@@ -1,0 +1,24 @@
+5장 CSS속성
+ 1절 단위들 : px(픽셀), %, pt, em
+ 2절 url함수 : url(사진이나 웹사이트의 주소)
+ 3절 display : 요소의 display 속성을 변경
+	block, inline, inline-blcok, none
+ 4절 투명도
+	opacity : 0(투명) <= opacity <= 1
+	투명의 경우 display: none도 사용가능
+		opacity: 0의 경우 안보이지만 해당 요소의 사이즈만큼 공간을 차지한지만
+		display: none의 경우 요소의 공간을 제외한다
+ 5절 margin, padding
+	margin : 요소와 다음 요소 사이의 공간
+	padding: 요소 안의 자식 요소 사이의 공간
+ 6절 box-sizing
+	box-sizing: border-box : 요소의 border를 width에 포함
+ 7절 글자 속성
+	line-height(행간격), font-style, font-family, text-decoration, font-size ...
+ 8절 position : 요소의 위치를 설정
+	absolute : 절대 위치
+	fixed : 고정위치
+	relative : 상대적 위치
+		top, left, bottom, right과 함께 사용
+ 9절 float : 요소의 정렬
+	left, center, right, ...
