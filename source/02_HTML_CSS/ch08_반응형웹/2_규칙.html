@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.7, maximum-scale=2.0">
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url(css/title.css);
+        @import url(css/footer.css);
+        @media screen {
+            /* 스크린용 css : import 불가*/
+            #wrap .content{
+                background-color: #00640033;
+                padding: 10px;
+                text-align: justify;
+            }
+        }
+        @media print{
+            /*프린트용 css*/
+            #wrap .content{
+                color: #006400;
+                padding: 10px;
+                text-align: justify;
+                font-size: 1.5em;
+                font-family: "Nanum Pen Script", cursive;;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="title">
+            NOTICE
+        </div>
+        <hr>
+        <div class="content">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+        <div class="footer">
+            <p>2025.10.31 <br>written by Hong Gil-Dong</p>
+        </div>
+    </div>
+</body>
+</html>
