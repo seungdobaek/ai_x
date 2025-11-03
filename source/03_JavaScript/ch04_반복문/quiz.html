@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        let sum = 0;
+        let cnt = 0;
+        let correct_info = 0;
+        while(confirm("누적할래?")){
+            score = parseFloat(prompt("누적할 점수? (0~100점 사이)"));
+            cnt++;
+            if(score && score >= 0 && score <= 100){
+                sum += score;
+                correct_info++;
+            }
+        }
+        document.writeln(`${cnt}번 입력 <br>`);
+        document.writeln(`누적점수 : ${sum} <br>`);
+        document.writeln(`점수를 제대로 입력한 횟수 : ${correct_info} <br>`);
+        document.writeln(`점수를 잘못 입력한 횟수 : ${cnt-correct_info} <br>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

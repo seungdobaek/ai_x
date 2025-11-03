@@ -1,0 +1,65 @@
+1장 개요
+	JavaScript란
+		웹 문서의 내용을 동적으로 바꾸거나 마우스를 클릭하는것 같은 이벤트처리
+		html head 태그 안에 script를 이용하여 JavaScript를 사용
+		HTML과 동일하게 오류를 무시하기에 F12 개발자도구를 이용하여 오류를 확인할수 있다
+2장 기본문법
+ 2.1 기본자료형의 종류
+	string, number, boolean, function, object, undefined
+ 2.2 출력
+	console.log()를 이용하여 콘솔에 프린트가 가능
+ 2.3 변수의 생성과 사용
+	변수 선언시 var, let, const를 사용
+		var : 변수의 재선언 가능, 전역변수
+		let : 변수의 재선언 불가, 블록레벨 스코프 (지역변수)
+		const : 재할당 불가, 상수
+ 2.4 confirm()
+	boolean 타입을 사용자로부터 입력 받는다
+	비교연산자
+		==   : 같은 값인지 여부, 타입의 일치 여부는 상관 없음
+		=== : 같은 값, 같은 타입인지 여부
+ 2.5 prompt()
+	string 타입을 사용자로부터 입력 받는다
+ 2.6 숫자변형함수
+	Number(), parseInt()
+ 2.7 false의 값들
+	0, '', NaN, null, undefined 는 false로 해석이 된다
+3장 조건문
+ 3.1 if문
+	if(조건1){
+		조건1 참일시 명령어
+	} else if(조건2){
+		조건1 거짓, 조건2 참일시 명령어
+	} else{
+		위의 조건이 전부 거짓일시 명령어
+	}
+ 3.2 switch 문
+	switch(기본자료형):
+		case(기본자료형의 값1):
+			기본자료형의 값이 1일경우 할 명령어
+			break
+		case(기본자료형의 값2):
+			기본자료형의 값이 2일경우 할 명령어
+			break
+		default:
+			위의 케이스가 아닐경우
+ 3.3 삼항연산자
+	조건 ? 조건 참일시의 값 : 조건 거짓일시의 값
+4장 반복문
+ 4.1 배열
+	python의 list와 비슷하다
+		[값1, 값2, ...]
+		각 값의 type은 달라도 상관 없으며 배열 안에 배열도 가능
+ 4.2 for문
+	for(i=처음값, 조건, 증가값)
+	for(i of arr) <- arr의 index가 i로
+	for(i of arr) <- arr의 값들이 i로
+	arr.forEach(함수)
+ 4.3 while문
+	do{
+		반복할 명령어
+	} while(조건)
+		-> do가 있을경우 한번은 무조건 명령어를 수행
+	while(조건){
+		반복할 명령어
+	}	-> 조건이 만족하면 계속 명령어 실행
