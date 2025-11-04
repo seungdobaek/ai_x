@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        let i = 10;
+        document.writeln('i=' + i);
+        //functionVar(20, 10); //funcVar는 아직 할당되지 않았기에 사용 불가
+        let functionVar = function(a, b){ // 익명함수
+            alert('함수 표현식의 a = ' + a);
+        };
+        functionVar(20, 10) // 함수 표현식 호출
+        // ECMAScript 6 문법의 화살표함수 표기법
+        functionVar = (a,b) => {
+            alert(`화살표 함수 a = ${a} b = ${b}`);
+        };
+        functionVar(20, 10) // 화살표 함수 호출
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            background: url(ch05_img/img03.png);
+            background-size: 100%;
+            color: white;
+        }
+    </style>
+    <script>
+        document.write(new Date().toLocaleString()+'<br>');
+        document.write('0초 지남 <br>');
+        const backArr = ['url(ch05_img/img03.png)', 'url(ch05_img/img01.png)', 'url(ch05_img/img02.png)'];
+        const colorArr = ['white', 'yellow', 'blue'];
+        cnt = 0
+        let id = setInterval(() => {
+            cnt ++;
+            console.log(cnt);
+            console.log(backArr[cnt]);
+            document.body.innerHTML = '';
+            document.body.innerHTML += new Date().toLocaleString()+'<br>';
+            document.body.innerHTML += `${cnt}초 지남 <br>`;
+            document.body.style.backgroundImage = backArr[cnt%3];
+            document.body.style.backgroundSize = '100%';
+            document.body.style.color = colorArr[cnt%3];
+        }, 1000);
+        setTimeout(() => {
+            clearInterval(id);
+        }, 10500);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        fun() // 엔진이 항상 선언부를 먼저 해석하기에 fun()이 함수 위에 있지만 호출이 가능하다
+        function fun(){ // 선언적 함수 (선언부가 제일 먼저 컴파일)
+            document.writeln('선언적 함수 <br>');
+        }
+        fun();
+
+        function fun(){ //선언적 함수 재정의
+            document.writeln('수정된 선언적 함수 <br>')
+        }
+        fun();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

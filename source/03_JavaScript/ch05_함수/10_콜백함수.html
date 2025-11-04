@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function callTenTimes(callback){ // 콜백함수 : 매개변수로 들어온 함수
+            for (let i=0; i<10; i++){
+                callback();
+            }
+        }
+        //callTenTimes(function(){document.writeln(new Date() + '<br>')});
+        // function test(){
+        //     document.writeln(new Date() + '<br>');
+        // }
+        // callTenTimes(test)
+        callTenTimes(()=> document.writeln(new Date() + '<br>'));
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
