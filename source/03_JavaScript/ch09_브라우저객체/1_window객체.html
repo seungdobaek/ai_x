@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        var cnt = 0;
+        window.onclick = ()=> { // on으로 시작하는 변수 : 이벤트속성 변수
+            alert('click  햇네');
+        };
+        var chk = function(){};
+        for (let key in window){
+            if (key.substring(0,2)=='on' || key=='chk'){
+                document.write(++cnt +'. ' + key + ':' + window[key] + '<br>')
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

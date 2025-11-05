@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    table {width:350px; margin:20px auto; padding:20px 10px;}
+    table, input[type='text'], input[type='password'] {
+        border: 1px solid #385d81;
+        outline: 1px solid #385d81;
+        padding: 2px;
+    }
+    input[type='submit'], input[type='reset'], input[type='button'], button{
+        background-color: #385d81;
+        border:0; outline:0;
+        color:white; 
+        border-radius: 3px;
+        padding:10px 20px;
+        margin:5px;
+    }
+    td, th { padding:5px 10px; text-align:center;}
+    </style>
+    <script>
+        function joinCheck(){
+            patternName = /^[a-zA-Z가-힣]{2,}$/;
+            patternEmail = /^\w+@\w+(\.\w+){1,2}$/;
+            patternPW = [/[0-9]+/, /[a-z]+/, /[A-Z]+/, /[~`!@#$%^&*()_\-+=\|\\\[\]{}'":;?\/<>,\.]+/];
+
+            if (!patternName.test(frm.name.value.trim())){
+                alert('이름은 알파벳,한글로 2글자 이상이여야합니다');
+                frm.name.focus();
+                return false;
+            } else if (!patternEmail.test(frm.mail.value.trim())){
+                alert('이메일의 형식이 올바르지 않습니다');
+                frm.mail.focus();
+                return false;
+            } else {
+                for(let idx in patternPW){
+                    if (!patternPW[idx].test(frm.pw.value.trim())){
+                        var msg = '';
+                        switch(idx){
+                            case '0':
+                                console.log('here');
+                                msg = '비밀번호는 숫자를 포함해야합니다';
+                                break;
+                            case '1':
+                                msg = '비밀번호는 알파벳 소문자를 포함해야합니다';
+                                break;
+                            case '2':
+                                msg = '비밀번호는 알파벳 대문자를 포함해야합니다';
+                                break;
+                            case '3':
+                                msg = '비밀번호는 특수문자를 포함해야합니다';
+                                break;
+                        }
+                        alert(msg);
+                        frm.pw.focus();
+                        return false;
+                    }
+                }
+            }
+
+            if (frm.pw.value != frm.pwChk.value){
+                alert('두 비밀번호가 일치하지 않습니다. 다시 입력해주세요');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" onsubmit="return joinCheck()">
+        <table>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <input type="text" name="name" placeholder="특수문자와 숫자 못 와" 
+                        autofocus="autofocus"/>
+                </td>
+            </tr>
+            <tr>
+                <th>메일</th>
+                <td><input type="text" name="mail" placeholder="메일 형식에 맞추세요" /></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pw" placeholder="특수문자,알파벳,숫자 포함" /></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwChk" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                <input type="submit" value="회원가입" />
+                <input type="reset" value="취소" />
+                <input type="button" value="로그인" />
+            </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

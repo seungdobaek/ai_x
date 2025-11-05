@@ -1,0 +1,47 @@
+6장 객체
+ 6.1 객체 개요
+	여러가지 변수를 모아놓은 자료형
+	python의 dictionary와 비슷하게 {}로 생성
+	type: object
+ 6.2 속성과  메소드
+	객체 내부의 값을 속성
+	함수형 자료형인 속성은 메소드라 부른다
+ 6.3 toString()
+	python __str__처럼 객체를 문자로 변환할때 toString()이 자동으로 실행
+ 6.4 속성추가 및 삭제
+	추가 : 객체.속성 = 값
+	삭제: delete 객체.속성 
+ 6.5 함수를 이용한 객체 만들기
+7장 생성자 함수
+ 7.1 생성자함수생성
+	function 생성자함수(속성값들){  ... }
+		생성자함수의 이름은 대문자로
+	var 객체명 = new 생성자함수 로 객체를 생성 가능
+ 7.2 prototype
+	객체들이 공유하는 것들 (보통 메소드)의 경우 prototype에 저장하여 메모리를 아낄수 잇다
+ 7.3 class
+	ECMA script 6 이상을 지원하는 브라우저의 경우 class를 사용가능
+	constructor : python의 __init__과 동일 (초기값 설정하는 함수)
+8장 기본객체
+ 8.1 string 내장 함수
+	.length: 글자 수
+	.concat() : 두 string 연결
+	.substring(a,b) : a번째에서 b번째 앞까지, b생략시 끝까지
+	.indexOf(), .lastindexOf()
+	.trim()
+	.toUpperCase(), .toLowerCase()
+	.replace(), .replaceAll()
+ 8.2 정규표현식
+	/ 정규표현 / 으로 표현가능
+	정규표현식.test(str), str.match(정규표현식)
+ 8.3 array 내장함수
+	arr1 = arr2 : 얕은복사
+	arr.slice(), [...arr], Array.from(arr) : 깊은복사
+	arr.sort() : ascii 순으로 오름차순
+	arr.reverse() : ascii순으로 내림차순
+		숫자의 경우 arr.sort((left,right) => left-right)를 이용하여 오름차순
+			arr.sort((left,right) => right-left)를 이용하여 내림차순
+ 8.4 객체배열
+	객체.sort()
+		객체의 toString()의 값을 ascii 오름차순으로 정렬
+		sort에 매개변수를 줌으로써 sort를 어떻게할지 설정 가능
