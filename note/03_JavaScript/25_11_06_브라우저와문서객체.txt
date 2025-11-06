@@ -1,0 +1,33 @@
+9장 브라우저객체
+ 9.1 window 객체
+ 9.2 window 이벤트
+	on으로 시작하며 이벤트 속성이라 부른다
+	ex) onclick, onmouseout, ...
+ 9.3 새창열기
+	open(열릴 새창의 url, 새창의 윈도우 이름, 크기속성)
+ 9.4 location
+	페이지 이동을 위한 함수
+ 9.5 history
+	이전 페이지로 이동하는 함수
+10장 문서객체
+ 10.1 문서객체생성
+	방법 1(textNode가 있는경우)
+		1. textNode가 있을 태그 생성
+		2. textNode 생성
+		3. textNode를 1번의 태그와 연결
+		4. 1번 태그를 parent와 연결
+ 	방법 2(textNode가 없는 경우)
+		1. 태그 생성
+		2. 태그 속성 설정
+		3. 태그를 parent와 연결
+	방법 3(innerHTML)
+		parent.innterHTML = 태그를 string으로
+ 10.2 문서객체가져오기
+	documnet.getElementById(id)  # 엘리먼트 하나
+	documnet.getElementsByClass(class) # 배열
+	document.getElementsByName(name) # 배열
+	document.getElementsByTagName(tag) # 배열
+	document.querySelector(선택자) #엘리먼트 하나
+	document.querySelectorAll(선택자) # 배열
+ 10.3 문서객체제거
+	parent.removeChild(제거할 엘리먼트)

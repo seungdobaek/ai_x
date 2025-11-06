@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        window.onload = () => {
+            var header = document.getElementsByClassName('header');
+            for (var idx in header){
+                header[idx].onclick = function(){
+                    this.innerHTML = 'click했네'
+                    this.style.color = 'red';
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+    <h1 class="'header">click1</h1>
+</body>
+</html>

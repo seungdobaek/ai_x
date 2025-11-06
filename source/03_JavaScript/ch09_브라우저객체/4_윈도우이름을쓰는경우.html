@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const openWin = () => {
+            // childWin이라는 윈도우이름의 새창을 열기
+            let child = open('', 'childWin', 'width=700, height=500');
+            
+            if (!child){
+                alert('팝업차단 해제하셔야 새창이 열립니다');
+            } 
+        }
+    </script>
+</head>
+<body>
+    <button onclick="openWin()">새창열기</button>
+    <br>
+    <a href="http://www.daum.net" target="childWin">새창에서 다음으로 가기</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        var child;
+        const openChild = () => {
+            child = open('5_child(large).html', '', 'width=500, height=610 left=200');
+            if (!child){
+                alert('팝업차단해제');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>작은 그림의 parent창</h2>
+    <img src="ch09_img/small.jpg" alt="작은그림" onmouseover="openChild()" onmouseout="child.close()">
+</body>
+</html>

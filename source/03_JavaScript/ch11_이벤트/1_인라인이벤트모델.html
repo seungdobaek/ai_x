@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        h1 {cursor: pointer;}
+    </style>
+    <script>
+        const whenClick = () =>{
+            //h1의 text를 click했네로 변경
+            var h1 = document.getElementsByTagName('h1')[0];
+            h1.innerHTML = 'click했네';
+            h1.style.color = 'red';
+            h1.style.border = '1px solid orange';
+        };
+    </script>
+</head>
+<body>
+    <h1 onclick="whenClick()">Click해봐</h1>
+</body>
+</html>
