@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+        h1 {cursor: pointer;}
+    </style>
     <script>
-        window.onload = () => {
+        window.onload = ()=>{
             var header = document.getElementsByClassName('header');
-            for (var idx in header){
+            for(var idx in header){
                 header[idx].onclick = function(){
-                    this.innerHTML = 'click했네'
-                    this.style.color = 'red';
-                }
+                // this : 이벤트가 발생된 엘리먼트
+                this.innerHTML = 'click했네';
+                this.style.color = 'red';
+                };
             }
         };
     </script>
 </head>
 <body>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
-    <h1 class="'header">click1</h1>
+    <h1 class="header">click1</h1>
+    <h1 class="header">click2</h1>
+    <h1 class="header">click3</h1>
+    <h1 class="header">click4</h1>
+    <h1 class="header">click5</h1>
 </body>
 </html>
