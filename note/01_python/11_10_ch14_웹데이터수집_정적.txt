@@ -1,0 +1,27 @@
+14장 웹데이터 수집 Part1 정적
+ 1절 Beautiful Soup과 parser
+	Beautiful Soup : 웹크롤링을 도와주는 파이썬 패키지 중 하나
+		html에서 생ㅅ엉자 또는 태그들을 이용하여 특정 데이터를 추출 할수 있다.
+  1.1 웹사이트의 html을 가져오는 방법
+	방법 1: requests 패키지 이용
+		response = requests.get(url)
+	방법 2: urllib.request의 urlopen 사용
+		response = urlopen(url)
+  1.2 Beautiful Soup 객체 만들기
+	soup = BeautifulSoup(reponse.text(방법1)/response(방법2), 'html.parser')
+  1.3 Beautiful Soup 사용 방법
+	- select_one(선택자)
+	- select(선택자)
+	- find(태그, 속성)
+	- findall(태그, 속성)
+ 2절 Beautiful Soup을 활용한 html 웹 데이터수집
+  2.1 기본 방법:
+	1. 1.1의 방법 1 또는 2를 이용하여 html을 가져온다
+	2. Soup 객체를 만든다
+	3. Soup 객체를 이용하여 데이터를 수집한다
+  2.2 robots.txt에서 User-agent만 allow일경우 (다음 검색페이지 예제)
+	방법 1은 그대로 사용 가능
+	방법 2는 User-agent params를 이용해야만 한다
+  2.3 기본 방법1이 안되고 방법2 User-agent만 가능한 예제 (멜론 인기차트 예제)
+	방법2는 2.2의 방법처럼 User-agent를 추가하고 request
+	방법1 역시 User-agent를 추가하면 request가 가능해진다
