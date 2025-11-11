@@ -1,0 +1,17 @@
+14장 웹데이터 수집 Part1 정적
+ 2절 Beautiful Soup을 활용한 html 웹 데이터수집
+  2.4 openAPI 사용 : json 웹데이터 수집
+	openAPI 사용을 위해서는 키가 필요
+		키의 경우 온라인(Git)에 나의 키를 노출하면 안되기에 .env파일에 저장하여 사용
+		.env은 dotenv 패키지의 load_dotenv() 사용
+		header나 params에 키를 사용하여 openapi의 데이터값을 받을수 있다
+	예시) Naver 검색의 경우
+		headers = {
+    			"X-Naver-Client-Id":client_id,
+    			"X-Naver-Client-Secret":client_secret
+			}
+	json 파일의 경우 리스트딕셔너리 이기에 리스트딕셔너리 접근방식을 따른다
+  2.5. XML 웹데이터 수집
+	BeautifulSoup을 이용하여 크롤링이 가능
+		퍼서를 xml로 꼭 지정해야한다
+		데이터 크롤링은 기본 2.1을 따른다
