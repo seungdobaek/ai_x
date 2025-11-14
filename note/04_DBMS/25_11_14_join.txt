@@ -1,0 +1,26 @@
+2장 SELECT
+	SQL 연산자
+		DISTINCT: 중복제거
+		BETWEEN A AND B: A와 B 사이 (A,B 포함)
+		IN (값1, 값2, ..) : 값이 () 안에 잇을경우
+		LIKE 문법 : 문법을 만족 할경우
+			문법 : %(0개 이상) _(하나)
+	정렬 (ORDER BY)
+		ORDER BY 값1 (ASC/DESC), 값2 (ASC/DESC), ...
+		항상 WHERE 뒤에 와야한다
+		ASC의 경우 생략가능
+		값 1로 정렬후 같은 값을 가지는 요소 끼리 값2로 정렬, ...
+3장 JOIN
+	CROSS JOIN: 특별한 키워드 없이 FROM절에 두 개 이상의 테이블을 기술하는 것
+		무의미한 JOIN이라고도 불린다
+	EQUI JOIN: 동일한 컬럼을 기준으로 조인
+		WHERE절에 JOIN을 할 기준을 적어준다
+		EX) WHERE emp.deptno=dept.deptno
+	NON-EQUI JOIN: 특정 범위 내에 있는지를 조사하기 위한 조인
+		WHERE 절에 조인 조건을 = 연산자 이외의 비교 연산자를 사용합니다
+		EX) WHERE sal BETWEEN losal AND sal
+	SELF-JOIN: 한 테이블 내에서 조인
+		FROM 절에 동일한 테이블을 명시하기에 꼭 ALIAS를 해야한다
+	OUTER-JOIN: 조인 조건에 만족하지 않는 행도 나타나는 조인
+		보통 NULL값이 존재하는것도 조인하기 위해 사용
+		데이터가 적은 쪽에 (+) 기호를 붙혀 WHERE 절을 적는다
