@@ -1,0 +1,33 @@
+Sequence
+	순차적인 번호를 자동으로 생성하는 객체로 테이블과 독립적으로 생성 및 저장 가능
+	primary key로 지정할만한 column이 없을 경우 자주 사용한다
+	생성:	CREATE SEQUENCE sequence_name 
+			[INCREMENT BY n]  [START WITH n] 
+			[MAXVALUE n] [MINVALUE n]
+			[CYCLE | NOCYCLE]
+			[CACHE n | NOCACHE];
+	제거: 	DROP SEQUENCE sequence_name;
+	사용:	sequence_name.NEXTVAL
+
+Index
+	조회를 빠르게 하는데 사용
+	생성: 	CREATE INDEX Index_name ON table(column);
+	제거: 	DROP INDEX Index_name
+	장점: 조회의 속도가 크게 증가한다
+	단점: 조회를 제외한 나머지 프로세스의 속도가 느려진다
+
+MySQL 
+	create database 데이터베이스이름 -- 데이터 베이스 생성
+	use 데이터베이스이름 -- 데이터베이스 접속
+	데이터 베이스 접속을 하였다면 ORACLE과 거의 동일하게 사용이 가능
+	ORACLE과의 차이점
+		type:
+			MySQL타입 : numeric(n,d), varchar(n), date
+				정수타입 : tinyint(1byte), smallint(2byte), mediumint(3byte), int(4byte), bigint(8byte)
+				실수타입 : float(n, d;4byte), doulbe(n,d;8byte)
+                			문자 : char(n), text, medium(16MB), longtext(4GB)
+				날짜 ; date, datetime, time
+		FK 제약 조건은 항상 아래에 기술
+		auto_increment를 이용하여 sequence 해결
+		concat을 연결연살자 대신 사용
+		outer join의 문법이 다름

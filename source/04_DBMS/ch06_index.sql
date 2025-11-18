@@ -1,0 +1,21 @@
+-- [VI] 인덱스 : 조회(SELECT) 속도를 높이기 위해
+DROP TABLE EMP01;
+CREATE TABLE EMP01 AS SELECT * FROM EMP; -- EMP 테이블의 내용과 같은 EMP01생성
+SELECT * FROM EMP01; --14행
+INSERT INTO EMP01 SELECT * FROM EMP01; -- 데이터 뻥튀기 (데이터가 11만개 정도 되도록 뻥튀기)
+SELECT COUNT(*) FROM EMP01; -- EMP01의 행수(데이터수)
+INSERT INTO EMP01 (EMPNO, ENAME, DEPTNO) VALUES (1111, 'HONG', 50);
+INSERT INTO EMP01 SELECT * FROM EMP01; -- 90만개 정도까지 뻥튀기
+SELECT * FROM EMP01 WHERE ENAME='HONG'; -- 인덱스 생성전 조회시간: 0.025초
+-- 인덱스 생성
+CREATE INDEX IDX_EMP01_ENAME ON EMP01(ENAME); -- 인덱스 생성 시간: 0.675초
+SELECT * FROM EMP01 WHERE ENAME='HONG'; -- 인덱스 생성 후 : 1회(0.012초) 2회(0.001초)
+INSERT INTO EMP01 SELECT * FROM EMP01; -- 인덱스 생성후 뻥튀기 (기존보다 시간이 훨씬 걸림) 91만->128만 (40초)
+ROLLBACK; -- 롤백의 시간 역시 오래걸린다 (13초)
+
+-- 인덱스 삭제
+DROP INDEX IDX_EMP01_ENAME;
+SELECT * FROM EMP01 WHERE ENAME='HONG'; -- 다시 속도가 느려짐
+INSERT INTO EMP01 SELECT * FROM EMP01; -- 인덱스 삭제후 뻥튀기 91만->128만 (3.157초)
+ROLLBACK; -- 인덱스 삭제후 롤백 (0.123초)
+DROP TABLE EMP01; --테이블 삭제시 INDEX가 있다면 INDEX 역시 삭제
