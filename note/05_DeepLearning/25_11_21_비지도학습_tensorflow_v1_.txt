@@ -1,0 +1,35 @@
+ch03 비지도학습
+	군집화 로직
+		초기점을 n개 지정 (n=cluster 갯수)
+		각 데이터와 n 사이의 거리를 계산후 가장 가까운 초기지점으로 묶음
+		묶은 각각의 데이터의 중간 지점을 계산 후 초기점을 해당 지점으로 이동
+		위의 내용을 반복
+	군집화를 위한 api
+		sklearn.cluster.KMean(n_cluster=cluster수, init=초기점지정방식, n_init=실행횟수, random_stat=시드값)
+
+
+ch04 tensorflow v1
+ 1. tensorflow v2.xx에서 v1 사용하기
+	tf.disable_v2_behavior() : tensorflow v2 비활성화하고 v1 활성화
+	Tensorflow
+		tensorflow(tensor 객체의 흐름)을 사용하는 수치 계산 라이브러리
+		그래프는 node(연산)와 edge로 구성
+		tf.Session()을 이용해서 실행 환경
+		sess.run()을 통해서 실행 결과를 확인
+ 2. tensorflow v1을 이용한 회귀분석
+  2.1 2.1 독립변수 x가 1개, 타겟(종속)변수 y가 1개
+	(1) tensor 그래프 정의
+	(2) weight와 bias 생성
+	(3) 예측값 Hat, Hypothesis
+	(4) cost function (손실함수 : mse)
+	(5) 세션 생성
+	(6) W, b 초기화
+	(7) 학습
+	(8) 예측
+  2.2 predict를 위한 placeholder 이용
+	placeholder : 외부에서 데이터를 입력받을 수 잇는 노드
+	tf.placeholder(dtype=데이터타입)
+  2.3 2.3 scale이 다른 데이터들의 회귀분석 구현
+		scale 조정방법: 모든 데이터를 일정범위내로 조정
+			normalization(정규화) : 모든 데이터를 0~1 사이로 조정
+			standardization(표준화) : 데이터의 평균을 0, 표준편차를 1로 조정
