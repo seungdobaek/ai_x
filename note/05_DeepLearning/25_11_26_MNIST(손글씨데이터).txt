@@ -1,0 +1,31 @@
+MINIST 손글씨데이터 예제
+1 저장된 사진을 넘파이 배열로 바꾸는 방법 (cv2 라이브러리)
+	cv2.imread('파일위치', cv2.IMREAD_GRAYSCALE)
+ 이미지를 matplotlib으로 불러오는 방법:
+	plt.imshow(사진의 넘파이배열,cmap='gray')
+
+2. 모델을 위한 데이터 전처리~모델생성 및 평가하기
+	해당 부분은 앞서한 것과 크게 다른점이 없기에 따로 노트를 하지 않음
+3. 모델(DNN)의 accuracy 늘리는 방법
+	데이터 확보
+	모델 수정 (레이어추가, units수 증가)
+	과적합 방지: validation data 추가, 활성화함수(relu 계열, tanh 계열), Dropout 레이어
+	epoch 조정
+	optimizer 변경 (거의 효과는 없다)
+4. 콜백함수
+	model.fit(..., callbacks=[사용할 콜백 객체들])
+	자주 사용되는 콜백 객체:
+		Callback 객체를 이용한 로그출력
+			CallBack을 상속받는 객체를 만든후 on_epoch_end(self, batch, logs={})함수를 override한다
+		EarlyStopping 객체를 이용한 조기종료(과적합방지)
+			val_loss 값이 늘어나면 지정한 epoch를 다 수행하지 않고 조기 종료
+			val_accuracy 값이 감소하면 지정한 epoch를 수행하지 않고 조기 종료
+			EarlyStopping(monitor='val_accuracy', patience=3)
+				monitor: 모니터할 값
+				patience: 기다릴 epoch 수
+		ModelCheckpoint를 이용한 모델 저장
+			model_checkpoint = ModelCheckpoint(filepath=file, 
+                                   				monitor='val_accuracy',  #모니터할 값 (이값에 따라 저장여부를 지정)
+                                   				save_best_only=True,  # 조건을 만족하는 최상의 모델만 저장
+                                   				mode='max', #값이 클수록 저장
+                                   				verbose=1)
