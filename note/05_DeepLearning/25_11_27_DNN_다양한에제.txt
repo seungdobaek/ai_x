@@ -1,0 +1,44 @@
+와인 품질 데이터, 아이리스데이터
+	데이터를 전처리를 하거나 모델을 만드는 과정은 앞의 예제와 동일
+
+아이리스데이터를 이용한 다양한 DNN 모델
+	1. 기본적인 DNN 모델
+		model = Sequential()
+		model.add(Input(dim))
+		model.add(Dense(parameter))
+		....
+		또는
+		model = Sequential([
+				Input(dim)
+				Dense(parameter)
+				...
+			])
+	2. 모델 생성함수를 가지는 클래스
+		@staticmethod 를 이용하여 클래스에서 모델을 정의
+		모델을 만들때 className.model함수()로 모델을 만들수 있다
+	3. 함수형(병렬을 사용하지 않는 모델)
+		input_ = Input(dim)
+		layer1 = Dense(parameter)(input_)
+		layer2 = Dense(parameter)(layer2)
+		...
+		output = Dense(parameter)(마지막layer)
+		model = Model(inputs=input_, outputs=output)
+	4. 함수형(병렬 사용)
+		병렬을 사용하는 이유: input의 값이나 layer의 unit의 값이 크다면 게산하는데 오래 걸리기에
+				이걸 해결하기 위해 layer의 node들을 쪼개서 weight을 계산
+		input_ = Input(dim)
+		dense1= Dense(parameter)(input_)
+		dense2 = Dense(parameter)(input_)
+		layer1 = concatenate([dense1, dense2])
+		...
+		output = Dense(parameter)(마지막layer)
+		model = Model(inputs=input_, outputs=output)
+	5. 리지듀얼 블럭(Residual Block) : 
+		딥러닝에서 기울기 소실 문제로 학습이 잘 되지 않는 부분을 해결하기 위한 제안
+		input_ = Input(dim)
+		dense1= Dense(parameter)(input_)
+		dense2 = Dense(parameter)(dense1)
+		layer1 = add([dense1, dense2])
+		...
+		output = Dense(parameter)(마지막layer)
+		model = Model(inputs=input_, outputs=output)
