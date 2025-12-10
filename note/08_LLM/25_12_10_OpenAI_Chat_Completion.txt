@@ -1,0 +1,25 @@
+3장 OpenAI_Chat_Completions (OpenAI 챗봇 이용)
+ 1절 OpenAI 환경 설정
+	API 키 발급 및 보안 설정(.env 파일)
+		OPENAI_API_KEY=발급받은-API키-값
+ 2절 기본적인 Chat Completions API 사용법
+	메세지(prompt)는  role과 content 필드로 구성
+		role : user (사용자 메시지), assistant (모델의 응답 메시지), system (시스템 지시 메시지) 세 가지 역할
+		content : 전달 내용
+	OpenAI().chat.completions.create(model, message, temperature, frequency_penalty)로 사용
+		OpenAI는 openai 패키지의 클래스
+ 3절 스트리밍 응답 (Streaming)
+	기본적으로 요청에 대한 완료된 답변을 한꺼번에 반환하지만 스트리밍 응답을 사용하면
+		용자에게 실시간으로 응답을 표시하거나, 매우 긴 응답을 부분 부분 처리 가능
+	스트리밍이 필요한 경우 : 실시간 피드백, 긴 응답 처리, 중간 작업 가능
+	스트리밍 사용 방법 : OpenAI().chat.completions.create에 stream=True 퍼라미터 이용
+ 4절 시스템 메시지 활용
+	시스템 메시지(system role message)는 모델에게 전체 대화의 맥락이나 규칙을 알려주는 역할
+ 5절 고급 활용법
+	토큰 최적화 및 비용 절감 : 토큰수에 따라 비용이 청구
+		짧고 명확한 프롬프트, 대화 내역 관리, 모델 선택, max_tokens 파라미터 활용
+	에러 핸들링 및 예외 처리 (OpenAIError)
+		네트워크 오류 또는 타임아웃
+		레이트 리미트 (Rate Limit) 초과
+		유효하지 않은 요청
+		API 키 오류
