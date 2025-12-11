@@ -1,0 +1,36 @@
+4장 DallE 모델을 이용한 이미지 만들기
+ 1절 DALL-E 모델 개요
+	DALL-E는 OpenAI가 개발한 최첨단 이미지 생성 AI 모델로, 텍스트로 설명한 내용을 바탕으로 새로운 이미지를 생성
+ 2절 기본 이미지 생성
+	이미지 생성 요청하기 (DALLE2)
+		openAI.images.generate(model='dall-e-2',  # 모델명
+              			prompt=prompt_text, # 생성될 이미지 설명
+                                  		n=1,                # 생성될 이미지 갯수
+                                  		size='256x256'    # 이미지 해상도
+                                 		)
+ 3절 DALLE3 모델
+	DALL-E 3의 향상된 기능을 활용하려면 model 파라미터를 지정
+	openAI.images.generate( prompt=prompt_text,
+    				model = "dall-e-3",
+    				n = 1,
+    				size="1024x1024",
+    				quality="standard", # 또는 "HD"
+    				style="natural"
+			)
+ 4절 이미지 편집
+	DALLE2 모델의 경우 이미지 편집이 가능 (이때 마스크가 필요)
+5장 TTS
+ TTS 변환: 텍스트를 음성으로 간단히 만들기
+	response = opnAI.audio.speech.create(
+    			model='tts-1',
+    			voice='nova',
+    			input=text
+			)
+	보이스에는 다양한 보이스 선택 가능
+6장 Whisper
+ Whisper : 오디오를 텍스트로
+	openAI.audio.transcriptions.create(
+    		file=audio_file,
+   		model='whisper-1',
+    		response_format='text'
+		)
