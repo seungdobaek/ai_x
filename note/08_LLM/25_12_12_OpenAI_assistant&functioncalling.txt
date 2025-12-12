@@ -1,0 +1,23 @@
+7장 OpenAI Assistants API를 활용한 서비스 구현 튜토리얼
+	OpenAI Assistants API는 OpenAI의 새로운 API로, 대화형 AI 어시스턴트를 보다 쉽게 구축하고 관리할 수 있도록 설계
+	장점: 대화 지속성 & 메모리, 다양한 도구 통합, 개인화된 지시어, 개발 편의
+	사용방법
+		1. client 객체 만들기
+		2. Assistant 생성 ( OpnAI.beta.assistants.create(instruction, model) )
+		3. 새로운 대화 시 thread 생성 : 기억을 담당 (대화를 하면 thread에 추가가 된다)
+			OpenAI.beta.threads.create()
+		4. thread에 사용자 메세지 추가 (OpnAI.beta.threads.create(thread_id, role, content)
+		5. 어시스턴트에게 답변 생성 요청 (openAI API 연동)
+			OpenAI.beta.threads.runs.create_and_poll(thread_id, assistant_id)
+	
+  파일 업로드 및 코드 인터프리터 사용
+	파일 업로드는 사용자가 제공한 데이터를 어시스턴트가 활용할 수 있게 하는 중요한 기능
+		코드 인터프리터(Code Interpreter)가 대표적
+	사용방법	
+		1. 파일 업로드 ( OpenAI.files.create(file, purpose) )
+		2. 코드 인터프리터 기능을 갖춘 어시스턴트 생성
+			OpnAI.beta.assistants.create(instruction, model,tools)
+				tools는 리스트로 ( ex :tools=[{"type":"code_interpreter"}] )
+		3. 새로운 대화 thread 시작
+		4. 사용자 메세지 추가
+		5. 어시스턴트에게 답변 생성 요청 (openAI API 연동)
