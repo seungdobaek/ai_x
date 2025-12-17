@@ -52,3 +52,11 @@ pip install sacremoses # 한영번역의 경고를 막고, 번역 품질을 높�
 
 ※ 머신러닝
 pip install dataprep (0.4.5)
+
+※ 의사결정나무 모형의 트리 구조 - ml-dl-nlp 환경 (base 환경전 이걸 먼저 설치)
+conda install -c conda-forge graphviz # 의사 결정 나무 그래프 생성하는 도구
+pip install pydot # graphviz의 .dot 데이터를 이미지로 변환, dot-V로 확인
+
+※ 의사결정나무 모형의 트리 구조 - base환경
+conda install graphviz
+pip install pydot
