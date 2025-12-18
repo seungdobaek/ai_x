@@ -60,3 +60,13 @@ pip install pydot # graphviz의 .dot 데이터를 이미지로 변환, dot-V로 
 ※ 의사결정나무 모형의 트리 구조 - base환경
 conda install graphviz
 pip install pydot
+
+※ 자료불균형 처리 smote
+pip install imbalanced-learn==0.10.1 #0.10.1
+
+#설치전 의존성 확인
+pip install --dry-run xgboost==1.7.3
+pip install xgboost==1.7.3
+
+pip install lightgbm
+pip install catboost==1.2
