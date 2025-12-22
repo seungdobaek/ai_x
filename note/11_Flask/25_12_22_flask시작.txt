@@ -1,0 +1,14 @@
+flask를 시작하기 앞서 가상 환경을 폴더에 만들어보기
+	가상환경 만들기 : python -m venv 가상환경이름 : 가상환경이름을 가진 가상확경 생성
+	가상환경 들어가기 : 가상환경이름\Scripts\activate
+	pip을 이용해 필요한 라이브러리 설치
+	pip freeze > requirements.txt     # 내가 다운받은 패키지를 requirements.txt에 저장
+	pip install -r requirements.txt   # requirements.txt 안에 패키지를 버전을 동일하게 설치
+
+1장 Flask를 이용하여 웹서버 생성 및 실행
+	application = Flask(__name__) # 웹 서버 (웹 어플리케이션 객체)
+	@application.route('/')
+	def handler_function():
+    		return "<h1>Hello</h1>"
+	
+	항상 핸들러 함수가 있어야합니다.
