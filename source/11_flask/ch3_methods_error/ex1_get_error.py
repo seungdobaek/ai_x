@@ -49,7 +49,7 @@ def join():
     addr = request.args.get('addr')
     
     try:
-        member = Member(name=name, id=id, pw=pw, add=addr)
+        member = Member(name=name, id=id, pw=pw, addr=addr)
     except:
         return render_template('error_page.html', msg='유효하지 않은 값을 입력'), 500
     return render_template('1_onlyget/result.html', member=member)
