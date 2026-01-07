@@ -1,0 +1,24 @@
+벡터 임베딩
+	문장 -> 임베딩 벡터(1차원 숫자 배열)
+	RAG를 넣을때 문자를 넣을수는 없기에 임베딩 벡터를 이용
+유사도
+	RAG 전체를 넣으면 토큰수가 너무 커 안들어가거나 
+		들어가더라도 openAI의 경우 처리도 오래 걸리고 돈도 많이 든다
+	이를 해결하기 위해 유사도를 비교하여 높은 유사도의 chunk만 RAG로 넣는다
+	유사도 계산하는 방법
+		유클리드 거리 : 두 벡터간 거리가 가까운지
+		코사인 유사도 : 두 벡터간 방향이 유사한지
+		dot product : 두 벡터간 곱을 사용하여 거리와 방향을 모두 고려
+임베딩 방식
+	openAI (영어를 잘 임베딩한다, 한글은 다소 떨어지는 결과를 볼수 있다)
+	upstage (한글의 결과가 좋다)
+RAG 절차
+	1. 문서를 읽는다 (python-docx 이용) : \n은 제외
+	2. 읽어온 문서를 쪼갠다 (tiktoken 이용
+		모델의 context window 확인
+		chunk(문서를 쪼갠 단위)가 너무 길면 비용과 시간이 많이 들어
+	3. 쪼갠 문서를 임베딩처리 -> vector database에 저장 
+		-> chroma(local vector database=vector store) 
+		-> pinecorn(클라우드 vector database=vector store)
+	4. 질문과 vector DB의 유사도 검색
+	5. 유사도 검색으로 가져온 문서를 LLM에 질문과 같이 전달하여 답변 생성
